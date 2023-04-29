@@ -25,4 +25,4 @@ The 'Main screen plugin' aspect has very limited functionality, and will appear 
 
 💖 Credits
 
-This work is a solo work developed by Samuel Landers of tigerwil@hotmail.com
+This work is a solo work developed by Samuel Landers of tigerwild@hotmail.com
