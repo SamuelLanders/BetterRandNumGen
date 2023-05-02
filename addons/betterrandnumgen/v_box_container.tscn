@@ -51,16 +51,17 @@ layout_mode = 2
 size_flags_vertical = 3
 
 [node name="Label" type="Label" parent="GridContainer/VBoxContainer2/HBoxContainer2"]
-custom_minimum_size = Vector2(64, 0)
+custom_minimum_size = Vector2(121, 0)
 layout_mode = 2
 text = "randi ()"
 
-[node name="Button_cpy_1" type="Button" parent="GridContainer/VBoxContainer2/HBoxContainer2"]
+[node name="Button_randi" type="Button" parent="GridContainer/VBoxContainer2/HBoxContainer2"]
 custom_minimum_size = Vector2(136, 0)
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0
-text = "random integer:"
+text = "integer:"
+script = ExtResource("1_umi8b")
 
 [node name="LineEdit_item_1" type="LineEdit" parent="GridContainer/VBoxContainer2/HBoxContainer2"]
 unique_name_in_owner = true
@@ -76,16 +77,17 @@ layout_mode = 2
 size_flags_vertical = 3
 
 [node name="Label" type="Label" parent="GridContainer/VBoxContainer3/HBoxContainer3"]
-custom_minimum_size = Vector2(64, 0)
+custom_minimum_size = Vector2(121, 0)
 layout_mode = 2
 text = "randf ()"
 
-[node name="Button_cpy_2" type="Button" parent="GridContainer/VBoxContainer3/HBoxContainer3"]
+[node name="Button_randf" type="Button" parent="GridContainer/VBoxContainer3/HBoxContainer3"]
 custom_minimum_size = Vector2(136, 0)
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0
-text = "Random float:"
+text = "float:"
+script = ExtResource("1_umi8b")
 
 [node name="LineEdit_item_2" type="LineEdit" parent="GridContainer/VBoxContainer3/HBoxContainer3"]
 unique_name_in_owner = true
@@ -101,15 +103,18 @@ layout_mode = 2
 size_flags_vertical = 3
 
 [node name="Label" type="Label" parent="GridContainer/VBoxContainer4/HBoxContainer4"]
-custom_minimum_size = Vector2(64, 0)
+custom_minimum_size = Vector2(121, 0)
 layout_mode = 2
+theme_override_font_sizes/font_size = 14
+text = "generate_digits()"
 
-[node name="Button_cpy_3" type="Button" parent="GridContainer/VBoxContainer4/HBoxContainer4"]
+[node name="Button_ManyDigits" type="Button" parent="GridContainer/VBoxContainer4/HBoxContainer4"]
 custom_minimum_size = Vector2(136, 0)
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0
-text = " "
+text = " 420 digits:"
+script = ExtResource("1_umi8b")
 
 [node name="LineEdit_item_3" type="LineEdit" parent="GridContainer/VBoxContainer4/HBoxContainer4"]
 unique_name_in_owner = true
@@ -125,15 +130,17 @@ layout_mode = 2
 size_flags_vertical = 3
 
 [node name="Label" type="Label" parent="GridContainer/VBoxContainer5/HBoxContainer5"]
-custom_minimum_size = Vector2(64, 0)
+custom_minimum_size = Vector2(121, 0)
 layout_mode = 2
+text = "randi_range ()"
 
-[node name="Button_cpy_4" type="Button" parent="GridContainer/VBoxContainer5/HBoxContainer5"]
+[node name="Button_randi_range" type="Button" parent="GridContainer/VBoxContainer5/HBoxContainer5"]
 custom_minimum_size = Vector2(136, 0)
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0
-text = " "
+theme_override_font_sizes/font_size = 14
+text = " 1000-1010 range:"
 
 [node name="LineEdit_item_4" type="LineEdit" parent="GridContainer/VBoxContainer5/HBoxContainer5"]
 unique_name_in_owner = true
@@ -149,8 +156,9 @@ layout_mode = 2
 size_flags_vertical = 3
 
 [node name="Label" type="Label" parent="GridContainer/VBoxContainer6/HBoxContainer6"]
-custom_minimum_size = Vector2(64, 0)
+custom_minimum_size = Vector2(121, 0)
 layout_mode = 2
+text = " "
 
 [node name="Button_cpy_5" type="Button" parent="GridContainer/VBoxContainer6/HBoxContainer6"]
 custom_minimum_size = Vector2(136, 0)
@@ -173,7 +181,7 @@ layout_mode = 2
 size_flags_vertical = 3
 
 [node name="Label" type="Label" parent="GridContainer/VBoxContainer7/HBoxContainer7"]
-custom_minimum_size = Vector2(64, 0)
+custom_minimum_size = Vector2(121, 0)
 layout_mode = 2
 
 [node name="Button_cpy_6" type="Button" parent="GridContainer/VBoxContainer7/HBoxContainer7"]
@@ -190,3 +198,7 @@ layout_mode = 2
 size_flags_horizontal = 3
 
 [connection signal="pressed" from="GridContainer/VBoxContainer/Button_Create" to="GridContainer/VBoxContainer/Button_Create" method="_on_pressed_CreateNum"]
+[connection signal="pressed" from="GridContainer/VBoxContainer2/HBoxContainer2/Button_randi" to="GridContainer/VBoxContainer2/HBoxContainer2/Button_randi" method="_on_pressed_randi"]
+[connection signal="pressed" from="GridContainer/VBoxContainer3/HBoxContainer3/Button_randf" to="GridContainer/VBoxContainer3/HBoxContainer3/Button_randf" method="_on_pressed_randf"]
+[connection signal="pressed" from="GridContainer/VBoxContainer4/HBoxContainer4/Button_ManyDigits" to="GridContainer/VBoxContainer/Button_Create" method="_on_pressed_ManyDigits"]
+[connection signal="pressed" from="GridContainer/VBoxContainer5/HBoxContainer5/Button_randi_range" to="GridContainer/VBoxContainer/Button_Create" method="_on_pressed_randi_range1"]

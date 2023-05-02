@@ -2,7 +2,7 @@ BetterBetter Random Number Generator
 is licensed as cc-by-sa-4.0
 Creative Commons Attribution 4.0 (reuse allowed)
 
-It is developed by Samuel Landers of tigerwil@hotmail.com
+It is developed by Samuel Landers of tigerwild@hotmail.com
 
 ----------
 
