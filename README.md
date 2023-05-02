@@ -1,4 +1,4 @@
-# BetterRandNumGen
+# BetterRandNumGen v1.3.2
 
 🛠️ Installation
 
