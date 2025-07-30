@@ -1,6 +1,6 @@
 @tool
 
-extends Node
+extends RefCounted
 class_name BetterRandNumGen
 ################
 #This class attempts to make a more random (normal) distribution of digits generated in the resultant numbers than the Godot's built in PCG (as of Godot 4.0)
