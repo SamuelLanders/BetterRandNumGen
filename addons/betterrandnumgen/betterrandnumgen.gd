@@ -4,16 +4,34 @@ extends EditorPlugin
 
 const RNG_Plugin_Panel = preload("res://addons/betterrandnumgen/v_box_container.tscn")
 const THE_ICON = preload("res://addons/betterrandnumgen/icon.png") #icon
+const ENABLE_MAINSCREEN_PANEL_SETTING = "BetterRandNumGen/Main_Panel/Enable"
 
 var trng_plugin_instance
 
 func _enter_tree():		#functions starting with an underscore are default functions that we are over-riding by creating them here.
+
+	var settings = get_editor_interface().get_editor_settings()
+	if not settings.has_setting(ENABLE_MAINSCREEN_PANEL_SETTING):
+		settings.set_setting(ENABLE_MAINSCREEN_PANEL_SETTING, true)
+		(
+			settings
+			. add_property_info(
+				{
+					"name": ENABLE_MAINSCREEN_PANEL_SETTING,
+					"type": TYPE_BOOL,
+					"hint": PROPERTY_HINT_GLOBAL_FILE,
+					"hint_string": "",
+				}
+			)
+		)
+
 	# Initialization of the plugin goes here.
 	trng_plugin_instance = RNG_Plugin_Panel.instantiate()
 	
 	# Add the main panel to the editor's main viewport
-	get_editor_interface().get_editor_main_screen().add_child(trng_plugin_instance)
-	
+	if settings.get_setting(ENABLE_MAINSCREEN_PANEL_SETTING):
+		get_editor_interface().get_editor_main_screen().add_child(trng_plugin_instance)
+
 	#Hide the main panel. Important? Not yet sure. Per documentation, by default new node items added to a scene are NOT VISIBLE.
 	_make_visible(false) #testing shows that removing this does not affect performance or function, however it will then be automatically shown on screen.
 
@@ -22,9 +40,14 @@ func _exit_tree():# Clean-up of the plugin goes here.
 		trng_plugin_instance.queue_free()
 
 func _has_main_screen():   #forces check to ensure this pluging only runs on main screen. If not present then plugin would run at all times in the background.
-	return true 
+	var settings = get_editor_interface().get_editor_settings()
+	if settings.get_setting(ENABLE_MAINSCREEN_PANEL_SETTING):
+		return true
+	else:
+		return false
 	
-func _make_visible(visible):   #If the plugin exists, change visibility flag to true, making it visible
+func _make_visible(visible):
+	#If the plugin exists, change visibility flag to true, making it visible
 	if trng_plugin_instance:
 		trng_plugin_instance.visible = visible
 
@@ -48,4 +71,3 @@ func _get_plugin_icon():   #set the plugin icon
 	#3 - If any 'export'-ed functions are called, the export setter function is called.
 	#4 - The export setter function is called if the value is not the default value, then the _ready function is called.
 	
-
