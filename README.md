@@ -13,7 +13,9 @@
   b) You can create the directory manually or automatically (recommended for new to Godot users). To do so open Godot, which opens your project as above. In the top left select the menu: (Project > Project Settings > Plugins), then select ‘Create New Plugin’. Don’t worry, this will not break anything, and you will be able to delete it. The nice thing is it creates the directory for you. 
   
   c) Now extract betterrandnumgen into the plugin directory. You will have two paths similar to:
+  
 C:\Users\Bob\Documents\1stbasicproject_godot\addons\betterrandnumgen
+
 C:\Users\Bob\Documents\1stbasicproject_godot\addons\screenshots
 
   d) Enable the addon in Godot's plugins tab.
