@@ -3,7 +3,9 @@
 🛠️ Installation
 
 1.Download the BetterRandNumGen addon for Godot 4.x. This is the zip file that you will find when you press the ‘<>Code’ button at the top of github.
+
 2.Create or have an existing project in Godot. This means start Godot and let it create directories in your ‘My Documents’ section of Windows.
+
 3.Extract the betterrandnumgen folder into the addons folder within your Godot project directory.
 
   a) This will look something like: C:\Users\Bob\Documents\1stbasicproject_godot
